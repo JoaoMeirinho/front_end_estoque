@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 import Input from "../../components/Input/Input";
+import { Card } from "../../components/Card/Card";
 
 const Login = () => {
     const [errors, setErrors] = useState<string[]>([])
@@ -55,7 +56,7 @@ const Login = () => {
     return (
         <>
             <div className="main">
-                <div className="card-log flex flex-col items-center">
+                <Card>
                     <img src="/logo2.png" width="100px"/>
                     <h1 className="text-4xl font-bold my-2">Fazer Login</h1>
                     <p className="text-base text-gray-500">Realize o acesso do seu estoque!</p>
@@ -69,48 +70,29 @@ const Login = () => {
                             )
                         })
                     }
-                            {/* <label htmlFor="email" className="form-label">Email</label>
-                            <input 
-                            required
-                            name="email"
-                            type="email" 
-                            className="form-control" 
-                            id="email" placeholder="Digite seu email"
-                            onChange={(e) => handleChange(e)}/> */}
-
-                            <Input
-                                labelFor="email"
-                                labelText="Email"
-                                isRequired={true}
-                                name="email"
-                                type="email"
-                                id="email"
-                                placeholder="Digite seu Email"
-                                handleChange={(e) => handleChange(e)}
-                            />
-
-                            {/* <label htmlFor="senha" className="form-label">Senha</label>
-                            <input 
-                            required
-                            name="password"
-                            type="password" 
-                            className="form-control" 
-                            id="senha" 
-                            placeholder="Digite sua senha"
-                            onChange={(e) => handleChange(e)} /> */}
-                                <Input
-                                labelFor="senha"
-                                labelText="Senha"
-                                isRequired={true}
-                                name="password"
-                                type="password"
-                                id="senha"
-                                placeholder="Digite sua senha"
-                                handleChange={(e) => handleChange(e)}
-                            />
+                    <Input
+                        labelFor="email"
+                        labelText="Email"
+                        isRequired={true}
+                        name="email"
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu Email"
+                        handleChange={(e) => handleChange(e)}
+                    />
+                    <Input
+                        labelFor="senha"
+                        labelText="Senha"
+                        isRequired={true}
+                        name="password"
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        handleChange={(e) => handleChange(e)}
+                    />
                         <button type="submit" className="transition transition-border ease-in-out delay-0 bg-rose-500 rounded-lg hover:-translate-y-1 hover:scale-110 hover:bg-purple-600 duration-300 text-white w-80 max-[800px]:w-40 px-2 py-2 my-2 ">Login</button>
                     </form>
-                </div>
+                </Card>
             </div>
         </>
     )
